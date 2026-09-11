@@ -1,0 +1,78 @@
+﻿@model IReadOnlyList<WebConsultasMedicas.Models.HistorialCita>
+
+@{
+    ViewData["Title"] = "Detalle de cita";
+    var cita = ViewBag.Cita as WebConsultasMedicas.Models.CitaMedica;
+}
+
+<div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-3">
+    <div>
+        <h2 class="h5 mb-1">Detalle de cita</h2>
+        @if (cita is not null)
+        {
+            <p class="text-muted mb-0">
+                @($"#{cita.IdCita} - {cita.FechaCita:dd/MM/yyyy} {cita.HoraCita:hh\\:mm tt} / {cita.Especialidad?.Nombre} / {cita.Medico?.ApellidoPaterno} {cita.Medico?.ApellidoMaterno}, {cita.Medico?.Nombres}")
+            </p>
+        }
+    </div>
+    <div class="d-flex gap-2">
+        <a class="btn btn-outline-secondary" asp-action="MisCitas">Volver</a>
+    </div>
+</div>
+
+<div class="card shadow-sm">
+    <div class="table-responsive">
+        <table class="table align-middle mb-0">
+            <thead class="table-light">
+                <tr>
+                    <th style="width: 200px;">Fecha</th>
+                    <th style="width: 160px;">Estado</th>
+                    <th>Indicaciones / Observación</th>
+                    <th style="width: 220px;">Usuario acción</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model.Count == 0)
+                {
+                    <tr>
+                        <td colspan="4" class="text-center text-muted py-4">No hay historial.</td>
+                    </tr>
+                }
+                else
+                {
+                    foreach (var h in Model)
+                    {
+                        <tr>
+                            <td class="text-muted">@h.FechaCambio.ToString("dd/MM/yyyy hh:mm tt")</td>
+                            <td>
+                                @switch (h.IdEstadoCita)
+                                {
+                                    case 2:
+                                        <span class="badge bg-success">@h.EstadoCita?.Nombre</span>
+                                        break;
+                                    case 3:
+                                    case 5:
+                                        <span class="badge bg-danger">@h.EstadoCita?.Nombre</span>
+                                        break;
+                                    case 4:
+                                        <span class="badge bg-warning text-dark">@h.EstadoCita?.Nombre</span>
+                                        break;
+                                    default:
+                                        <span class="badge bg-secondary">@h.EstadoCita?.Nombre</span>
+                                        break;
+                                }
+                            </td>
+                            <td>@h.Observacion</td>
+                            <td class="text-muted">@h.UsuarioAccion</td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+
+

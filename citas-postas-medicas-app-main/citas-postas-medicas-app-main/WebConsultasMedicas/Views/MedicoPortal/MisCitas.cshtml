@@ -1,0 +1,118 @@
+﻿@model IReadOnlyList<WebConsultasMedicas.Models.CitaMedica>
+
+@{
+    ViewData["Title"] = "Mis citas (Médico)";
+}
+
+<div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-3">
+    <div>
+        <h2 class="h5 mb-1">Mis citas</h2>
+        <p class="text-muted mb-0">Últimas 200 citas asignadas a ti.</p>
+    </div>
+</div>
+
+<div class="card shadow-sm">
+    <div class="table-responsive">
+        <table class="table align-middle mb-0">
+            <thead class="table-light">
+                <tr>
+                    <th style="width: 160px;">Fecha</th>
+                    <th>Paciente</th>
+                    <th>Especialidad</th>
+                    <th style="width: 160px;">Estado</th>
+                    <th style="width: 180px;" class="text-end">Acción</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model.Count == 0)
+                {
+                    <tr>
+                        <td colspan="5" class="text-center text-muted py-4">No tienes citas.</td>
+                    </tr>
+                }
+                else
+                {
+                    foreach (var c in Model)
+                    {
+                        <tr>
+                            <td class="text-muted">@($"{c.FechaCita:dd/MM/yyyy} {c.HoraCita:hh\\:mm tt}")</td>
+                            <td>@($"{c.Paciente?.ApellidoPaterno} {c.Paciente?.ApellidoMaterno}, {c.Paciente?.Nombres}")</td>
+                            <td class="fw-semibold">@c.Especialidad?.Nombre</td>
+                            <td>
+                                @switch (c.IdEstadoCita)
+                                {
+                                    case 2:
+                                        <span class="badge bg-success">@c.EstadoCita?.Nombre</span>
+                                        break;
+                                    case 3:
+                                    case 5:
+                                        <span class="badge bg-danger">@c.EstadoCita?.Nombre</span>
+                                        break;
+                                    case 4:
+                                        <span class="badge bg-warning text-dark">@c.EstadoCita?.Nombre</span>
+                                        break;
+                                    default:
+                                        <span class="badge bg-secondary">@c.EstadoCita?.Nombre</span>
+                                        break;
+                                }
+                            </td>
+                            <td class="text-end">
+                                @if (c.IdEstadoCita == 2 || c.IdEstadoCita == 3 || c.IdEstadoCita == 5)
+                                {
+                                    <a class="btn btn-sm btn-outline-secondary" asp-action="Atender" asp-route-id="@c.IdCita">Ver</a>
+                                }
+                                else
+                                {
+                                    <a class="btn btn-sm btn-primary" asp-action="Atender" asp-route-id="@c.IdCita">Atender</a>
+                                }
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/8.0.5/signalr.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        (function () {
+            const initialToken = "@(ViewBag.UpdateToken ?? "")";
+
+            function startPolling() {
+                if (!initialToken) return;
+                let lastToken = initialToken;
+                window.setInterval(async function () {
+                    try {
+                        const res = await fetch("@Url.Action("UpdateToken", "MedicoPortal")", { cache: "no-store" });
+                        if (!res.ok) return;
+                        const data = await res.json();
+                        if (data && data.token && data.token !== lastToken) {
+                            window.location.reload();
+                        }
+                    } catch { }
+                }, 8000);
+            }
+
+            if (!window.signalR) {
+                startPolling();
+                return;
+            }
+            const connection = new signalR.HubConnectionBuilder()
+                .withUrl("/hubs/citas")
+                .withAutomaticReconnect()
+                .build();
+
+            connection.on("citasUpdated", function () {
+                window.location.reload();
+            });
+
+            connection.start().catch(function () { startPolling(); });
+        })();
+    </script>
+}
+
+
+
+
