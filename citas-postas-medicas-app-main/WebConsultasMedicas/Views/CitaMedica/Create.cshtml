@@ -1,0 +1,83 @@
+﻿@model WebConsultasMedicas.Models.Citas.CitaNuevaViewModel
+
+@{
+    ViewData["Title"] = "Nueva cita";
+}
+
+<div class="card shadow-sm">
+    <div class="card-body">
+        <form method="get" class="row g-3 mb-2">
+            <div class="col-md-3">
+                <label class="form-label" for="FechaCita">Fecha</label>
+                <input id="FechaCita" name="fechaCita" value="@Model.FechaCita.ToString("yyyy-MM-dd")" class="form-control" type="date" />
+            </div>
+
+            <div class="col-md-5">
+                <label class="form-label" for="IdPaciente">Paciente</label>
+                <select id="IdPaciente" name="idPaciente" class="form-select" asp-items="Model.Pacientes"></select>
+            </div>
+
+            <div class="col-md-4">
+                <label class="form-label" for="IdEspecialidad">Especialidad</label>
+                <select id="IdEspecialidad" name="idEspecialidad" class="form-select" asp-items="Model.Especialidades">
+                    <option value="">-- Seleccione --</option>
+                </select>
+            </div>
+
+            <div class="col-12 d-flex gap-2">
+                <button type="submit" class="btn btn-outline-primary">Cargar médicos</button>
+                <a asp-action="Index" class="btn btn-outline-secondary">Volver</a>
+            </div>
+        </form>
+
+        <hr />
+
+        <form asp-action="Create" method="post" class="row g-3">
+            @Html.AntiForgeryToken()
+            <input type="hidden" name="FechaCita" value="@Model.FechaCita.ToString("yyyy-MM-dd")" />
+            <input type="hidden" name="IdPaciente" value="@(Model.IdPaciente ?? 0)" />
+            <input type="hidden" name="IdEspecialidad" value="@(Model.IdEspecialidad ?? 0)" />
+
+            <div class="col-12">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            </div>
+
+            <div class="col-md-6">
+                <label class="form-label" for="IdMedico">Médico</label>
+                <select id="IdMedico"
+                        name="idMedico"
+                        class="form-select"
+                        asp-items="Model.Medicos"
+                        onchange="this.form.submit()">
+                    <option value="">-- Seleccione --</option>
+                </select>
+                <div class="form-text">Al elegir un médico, se cargan sus horarios para la fecha seleccionada.</div>
+            </div>
+
+            <div class="col-md-6">
+                <label class="form-label" for="IdHorarioMedico">Horario</label>
+                <select id="IdHorarioMedico" name="IdHorarioMedico" class="form-select" asp-items="Model.Horarios">
+                    <option value="">-- Seleccione --</option>
+                </select>
+                <span asp-validation-for="IdHorarioMedico" class="text-danger"></span>
+            </div>
+
+            <div class="col-12">
+                <div class="form-text">
+                    Estado por defecto: <strong>Programada</strong>. No se registra motivo ni observación en esta pantalla.
+                </div>
+            </div>
+
+            <div class="col-12 d-flex gap-2">
+                <button type="submit" class="btn btn-primary" @(Model.CanReserve ? "" : "disabled")>Reservar</button>
+                <a asp-action="Index" class="btn btn-outline-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
+
