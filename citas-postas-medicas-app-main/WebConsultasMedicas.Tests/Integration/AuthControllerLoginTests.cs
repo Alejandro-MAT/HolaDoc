@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.Extensions.DependencyInjection;
 using Moq;
 using WebConsultasMedicas.Controllers;
@@ -46,6 +47,10 @@ public class AuthControllerLoginTests
                 HttpContext = httpContext
             }
         };
+        controller.Url = Mock.Of<IUrlHelper>();
+        controller.TempData = new TempDataDictionary(
+            controller.ControllerContext.HttpContext,
+            Mock.Of<ITempDataProvider>());
 
         return (controller, authServiceMock);
     }

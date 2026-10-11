@@ -1,0 +1,160 @@
+Summary
+  Generated on: 10/10/2026 - 02:38:07 a. m.
+  Coverage date: 10/10/2026 - 02:19:58 a. m.
+  Parser: Cobertura
+  Assemblies: 1
+  Classes: 138
+  Files: 136
+  Line coverage: 5.3%
+  Covered lines: 429
+  Uncovered lines: 7658
+  Coverable lines: 8087
+  Total lines: 14007
+  Branch coverage: 1.4% (23 of 1611)
+  Covered branches: 23
+  Total branches: 1611
+  Method coverage: 13.3% (65 of 487)
+  Full method coverage: 12.7% (62 of 487)
+  Covered methods: 65
+  Fully covered methods: 62
+  Total methods: 487
+
+WebConsultasMedicas                                                         5.3%
+  AspNetCoreGeneratedDocument.Views__ViewStart                                0%
+  AspNetCoreGeneratedDocument.Views_Admin__ViewStart                          0%
+  AspNetCoreGeneratedDocument.Views_Admin_Dashboard                           0%
+  AspNetCoreGeneratedDocument.Views_Admin_Inicio                              0%
+  AspNetCoreGeneratedDocument.Views_Auth_Denied                               0%
+  AspNetCoreGeneratedDocument.Views_Auth_Login                                0%
+  AspNetCoreGeneratedDocument.Views_Auth_Register                             0%
+  AspNetCoreGeneratedDocument.Views_CitaMedica__ViewStart                     0%
+  AspNetCoreGeneratedDocument.Views_CitaMedica_Create                         0%
+  AspNetCoreGeneratedDocument.Views_CitaMedica_Delete                         0%
+  AspNetCoreGeneratedDocument.Views_CitaMedica_Edit                           0%
+  AspNetCoreGeneratedDocument.Views_CitaMedica_Index                          0%
+  AspNetCoreGeneratedDocument.Views_Especialidad__ViewStart                   0%
+  AspNetCoreGeneratedDocument.Views_Especialidad_Create                       0%
+  AspNetCoreGeneratedDocument.Views_Especialidad_Delete                       0%
+  AspNetCoreGeneratedDocument.Views_Especialidad_Edit                         0%
+  AspNetCoreGeneratedDocument.Views_Especialidad_Index                        0%
+  AspNetCoreGeneratedDocument.Views_EstadoCita__ViewStart                     0%
+  AspNetCoreGeneratedDocument.Views_EstadoCita_Create                         0%
+  AspNetCoreGeneratedDocument.Views_EstadoCita_Delete                         0%
+  AspNetCoreGeneratedDocument.Views_EstadoCita_Edit                           0%
+  AspNetCoreGeneratedDocument.Views_EstadoCita_Index                          0%
+  AspNetCoreGeneratedDocument.Views_HistorialCita__ViewStart                  0%
+  AspNetCoreGeneratedDocument.Views_HistorialCita_Create                      0%
+  AspNetCoreGeneratedDocument.Views_HistorialCita_Delete                      0%
+  AspNetCoreGeneratedDocument.Views_HistorialCita_Edit                        0%
+  AspNetCoreGeneratedDocument.Views_HistorialCita_Index                       0%
+  AspNetCoreGeneratedDocument.Views_Home_Index                                0%
+  AspNetCoreGeneratedDocument.Views_Home_Privacy                              0%
+  AspNetCoreGeneratedDocument.Views_HorarioMedico__ViewStart                  0%
+  AspNetCoreGeneratedDocument.Views_HorarioMedico_Create                      0%
+  AspNetCoreGeneratedDocument.Views_HorarioMedico_Delete                      0%
+  AspNetCoreGeneratedDocument.Views_HorarioMedico_Edit                        0%
+  AspNetCoreGeneratedDocument.Views_HorarioMedico_Index                       0%
+  AspNetCoreGeneratedDocument.Views_Medico__ViewStart                         0%
+  AspNetCoreGeneratedDocument.Views_Medico_Create                             0%
+  AspNetCoreGeneratedDocument.Views_Medico_Delete                             0%
+  AspNetCoreGeneratedDocument.Views_Medico_Edit                               0%
+  AspNetCoreGeneratedDocument.Views_Medico_Index                              0%
+  AspNetCoreGeneratedDocument.Views_MedicoPortal__ViewStart                   0%
+  AspNetCoreGeneratedDocument.Views_MedicoPortal_Atender                      0%
+  AspNetCoreGeneratedDocument.Views_MedicoPortal_MisCitas                     0%
+  AspNetCoreGeneratedDocument.Views_Paciente__ViewStart                       0%
+  AspNetCoreGeneratedDocument.Views_Paciente_CambiarClave                     0%
+  AspNetCoreGeneratedDocument.Views_Paciente_Create                           0%
+  AspNetCoreGeneratedDocument.Views_Paciente_Delete                           0%
+  AspNetCoreGeneratedDocument.Views_Paciente_Edit                             0%
+  AspNetCoreGeneratedDocument.Views_Paciente_Index                            0%
+  AspNetCoreGeneratedDocument.Views_Portal__ViewStart                         0%
+  AspNetCoreGeneratedDocument.Views_Portal_Buscar                             0%
+  AspNetCoreGeneratedDocument.Views_Portal_Detalle                            0%
+  AspNetCoreGeneratedDocument.Views_Portal_Horarios                           0%
+  AspNetCoreGeneratedDocument.Views_Portal_MisCitas                           0%
+  AspNetCoreGeneratedDocument.Views_Portal_Reservar                           0%
+  AspNetCoreGeneratedDocument.Views_Reportes_AtencionesPorMedico              0%
+  AspNetCoreGeneratedDocument.Views_Reportes_HistorialPaciente                0%
+  AspNetCoreGeneratedDocument.Views_Rol__ViewStart                            0%
+  AspNetCoreGeneratedDocument.Views_Rol_Create                                0%
+  AspNetCoreGeneratedDocument.Views_Rol_Delete                                0%
+  AspNetCoreGeneratedDocument.Views_Rol_Edit                                  0%
+  AspNetCoreGeneratedDocument.Views_Rol_Index                                 0%
+  AspNetCoreGeneratedDocument.Views_Shared__AdminLayout                       0%
+  AspNetCoreGeneratedDocument.Views_Shared__Layout                            0%
+  AspNetCoreGeneratedDocument.Views_Shared_Components_UserMenu_Default        0%
+  AspNetCoreGeneratedDocument.Views_Shared_Error                              0%
+  AspNetCoreGeneratedDocument.Views_Turno__ViewStart                          0%
+  AspNetCoreGeneratedDocument.Views_Turno_Create                              0%
+  AspNetCoreGeneratedDocument.Views_Turno_Delete                              0%
+  AspNetCoreGeneratedDocument.Views_Turno_Edit                                0%
+  AspNetCoreGeneratedDocument.Views_Turno_Index                               0%
+  AspNetCoreGeneratedDocument.Views_Usuario__ViewStart                        0%
+  AspNetCoreGeneratedDocument.Views_Usuario_Create                            0%
+  AspNetCoreGeneratedDocument.Views_Usuario_Delete                            0%
+  AspNetCoreGeneratedDocument.Views_Usuario_Edit                              0%
+  AspNetCoreGeneratedDocument.Views_Usuario_Index                             0%
+  Program                                                                     0%
+  WebConsultasMedicas.Controllers.AdminController                             0%
+  WebConsultasMedicas.Controllers.AuthController                           68.2%
+  WebConsultasMedicas.Controllers.CitaMedicaController                        0%
+  WebConsultasMedicas.Controllers.EspecialidadController                      0%
+  WebConsultasMedicas.Controllers.EstadoCitaController                        0%
+  WebConsultasMedicas.Controllers.HistorialCitaController                     0%
+  WebConsultasMedicas.Controllers.HomeController                              0%
+  WebConsultasMedicas.Controllers.HorarioMedicoController                     0%
+  WebConsultasMedicas.Controllers.MedicoController                            0%
+  WebConsultasMedicas.Controllers.MedicoPortalController                      0%
+  WebConsultasMedicas.Controllers.PacienteController                          0%
+  WebConsultasMedicas.Controllers.PortalController                            0%
+  WebConsultasMedicas.Controllers.ReportesController                          0%
+  WebConsultasMedicas.Controllers.RolController                               0%
+  WebConsultasMedicas.Controllers.TurnoController                             0%
+  WebConsultasMedicas.Controllers.UsuarioController                           0%
+  WebConsultasMedicas.Data.ApplicationDbContext                            97.3%
+  WebConsultasMedicas.Data.DbSeeder                                           0%
+  WebConsultasMedicas.Data.NumeroHistoriaClinicaGenerator                    55%
+  WebConsultasMedicas.Hubs.CitasHub                                           0%
+  WebConsultasMedicas.Migrations.ApplicationDbContextModelSnapshot            0%
+  WebConsultasMedicas.Migrations.HorarioFechaEnLugarDeDiaSemana               0%
+  WebConsultasMedicas.Migrations.InitialCreate                                0%
+  WebConsultasMedicas.Migrations.MedicoTiempoAtencionMin                      0%
+  WebConsultasMedicas.Migrations.MedicoUnicaEspecialidad                      0%
+  WebConsultasMedicas.Migrations.RemoveCuposHorarioMedico                     0%
+  WebConsultasMedicas.Migrations.RolesMedicoYVinculoUsuarioMedico             0%
+  WebConsultasMedicas.Migrations.SeedAdminUser                                0%
+  WebConsultasMedicas.ModelBinders.DateOnlyModelBinder                        0%
+  WebConsultasMedicas.ModelBinders.DateOnlyModelBinderProvider                0%
+  WebConsultasMedicas.ModelBinders.TimeOnlyModelBinder                        0%
+  WebConsultasMedicas.ModelBinders.TimeOnlyModelBinderProvider                0%
+  WebConsultasMedicas.Models.AdminPacienteCreateViewModel                     0%
+  WebConsultasMedicas.Models.AdminPacienteEditViewModel                       0%
+  WebConsultasMedicas.Models.CitaMedica                                       0%
+  WebConsultasMedicas.Models.Citas.CitaNuevaViewModel                         0%
+  WebConsultasMedicas.Models.Dashboard.AdminDashboardViewModel                0%
+  WebConsultasMedicas.Models.Dashboard.TopEspecialidadMetric                  0%
+  WebConsultasMedicas.Models.ErrorViewModel                                   0%
+  WebConsultasMedicas.Models.Especialidad                                   100%
+  WebConsultasMedicas.Models.EstadoCita                                     100%
+  WebConsultasMedicas.Models.HistorialCita                                    0%
+  WebConsultasMedicas.Models.HorarioMedico                                    0%
+  WebConsultasMedicas.Models.LoginViewModel                                 100%
+  WebConsultasMedicas.Models.Medico                                           0%
+  WebConsultasMedicas.Models.MedicoAdminViewModel                             0%
+  WebConsultasMedicas.Models.MedicoIndicacionViewModel                        0%
+  WebConsultasMedicas.Models.Paciente                                      92.8%
+  WebConsultasMedicas.Models.PacienteCambiarClaveViewModel                    0%
+  WebConsultasMedicas.Models.PatientRegisterViewModel                       100%
+  WebConsultasMedicas.Models.PortalBuscarMedicosViewModel                     0%
+  WebConsultasMedicas.Models.PortalReservarViewModel                          0%
+  WebConsultasMedicas.Models.Reportes.AtencionesPorMedicoFilterViewModel      0%
+  WebConsultasMedicas.Models.Reportes.AtencionPorMedicoRow                    0%
+  WebConsultasMedicas.Models.Reportes.HistorialPacienteRow                    0%
+  WebConsultasMedicas.Models.Reportes.HistorialPacienteViewModel              0%
+  WebConsultasMedicas.Models.Rol                                            100%
+  WebConsultasMedicas.Models.Turno                                          100%
+  WebConsultasMedicas.Models.Usuario                                       77.7%
+  WebConsultasMedicas.Security.PasswordHasher                               100%
+  WebConsultasMedicas.ViewComponents.UserMenuViewComponent                    0%
+  WebConsultasMedicas.ViewComponents.UserMenuVm                               0%
